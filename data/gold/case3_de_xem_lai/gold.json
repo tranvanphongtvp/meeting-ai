@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "meeting_id": "case3_de_xem_lai",
+  "muc_dich": "Để xem lại: Minh chủ động hoãn quyết định A/B chờ số liệu. Hệ thống KHÔNG được tạo quyết định đã chốt; A và B còn proposed; câu hỏi chọn A/B là open.",
+  "ghi_chu_chung": "Khớp mục gold với dự đoán theo loại mục và mức trùng của turn_ids, KHÔNG theo item_id/event_id (hai thứ này đổi mỗi lần chạy). Trường *_chap_nhan là danh sách giá trị đều được coi là đúng. optional=true: có hay không đều không bị tính thiếu/thừa.",
+  "items": [
+    {
+      "gold_id": "G01",
+      "type": "goal",
+      "status": "confirmed",
+      "deadline": "2026-10-23",
+      "summary": "Hoàn thành MVP trước 23/10/2026",
+      "turn_ids": [
+        "T001",
+        "T017"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G02",
+      "type": "open_question",
+      "status": "open",
+      "summary": "Chọn A (thư viện biểu đồ có sẵn) hay B (tự xây) cho chức năng báo cáo?",
+      "ghi_chu": "Chưa chốt; sẽ xem kết quả khảo sát rồi họp lại ngày 16/10.",
+      "turn_ids": [
+        "T002",
+        "T005",
+        "T008",
+        "T011",
+        "T014",
+        "T017"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G03",
+      "type": "proposal",
+      "status": "proposed",
+      "proposed_by": "Nam",
+      "summary": "Đề xuất A: dùng thư viện biểu đồ có sẵn",
+      "ghi_chu": "Có phản biện (T003, T010) nhưng KHÔNG bị bác: Minh nói cả A và B vẫn đang được xem xét.",
+      "turn_ids": [
+        "T002",
+        "T009"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G04",
+      "type": "proposal",
+      "status": "proposed",
+      "optional": true,
+      "proposed_by": "Nam",
+      "summary": "Phương án B: tự xây dựng thành phần biểu đồ",
+      "ghi_chu": "Chưa ai đề xuất rõ ràng, chỉ được nêu như phương án thay thế; nên để optional.",
+      "turn_ids": [
+        "T004",
+        "T010"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G05",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Lan",
+      "deadline": "2026-10-16",
+      "summary": "Lan chạy thử hiệu năng thư viện A trên bộ dữ liệu lớn (thời gian tải, bộ nhớ) và gửi kết quả",
+      "ghi_chu": "Việc là khảo sát, không phải triển khai chính thức.",
+      "turn_ids": [
+        "T006",
+        "T012",
+        "T016"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G06",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Nam",
+      "deadline": "2026-10-16",
+      "summary": "Nam tổng hợp kiểu biểu đồ cần hỗ trợ (kiểm tra A) và ước lượng thời gian phương án B",
+      "ghi_chu": "Hạn 'trước ngày 16 tháng 10' không ghi năm ở T013, hiểu là 2026.",
+      "turn_ids": [
+        "T007",
+        "T013",
+        "T015"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G07",
+      "type": "action",
+      "status": "confirmed",
+      "optional": true,
+      "owner": "Minh",
+      "deadline": "2026-10-16",
+      "summary": "Minh xem hai phần đánh giá và tổ chức họp trao đổi lại ngày 16/10",
+      "ghi_chu": "Minh tự cam kết; có thể được ghi là sự kiện thay vì action nên để optional.",
+      "turn_ids": [
+        "T014"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G08",
+      "type": "requirement_feedback",
+      "status": "confirmed",
+      "optional": true,
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed"
+      ],
+      "summary": "Chưa triển khai chính thức theo A hoặc B cho đến khi có kết luận",
+      "ghi_chu": "Ràng buộc do Minh đặt (T011), Nam và Lan xác nhận (T015, T016).",
+      "turn_ids": [
+        "T011",
+        "T015",
+        "T016"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G09",
+      "type": "issue",
+      "status": "open",
+      "optional": true,
+      "status_chap_nhan": [
+        "open"
+      ],
+      "summary": "Thư viện A chưa đáp ứng hoàn toàn tùy chỉnh giao diện và xử lý dữ liệu lớn",
+      "turn_ids": [
+        "T003"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ],
+  "must_not_have": [
+    {
+      "type": "decision",
+      "status": [
+        "confirmed",
+        "rejected",
+        "superseded"
+      ],
+      "turn_ids": [],
+      "ly_do": "Minh nói rõ nhiều lần là chưa có quyết định (T005, T008, T011, T017). Không được có quyết định đã chốt/bị bác/bị thay thế."
+    },
+    {
+      "type": "proposal",
+      "status": [
+        "rejected",
+        "superseded"
+      ],
+      "turn_ids": [],
+      "ly_do": "A và B đều vẫn đang được xem xét: không đề xuất nào được rejected hoặc superseded."
+    }
+  ],
+  "must_share_thread": [
+    [
+      "G02",
+      "G03"
+    ]
+  ],
+  "must_not_share_thread": [],
+  "pair_labels": [
+    {
+      "items": [
+        "G05",
+        "G06"
+      ],
+      "same_task": false,
+      "ghi_chu": "Hai việc khảo sát khác nhau của hai người: chạy thử hiệu năng A và ước lượng B."
+    }
+  ]
+}

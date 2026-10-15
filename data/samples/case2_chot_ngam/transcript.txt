@@ -1,0 +1,33 @@
+[00:00:10] Minh: Hôm nay mình bàn cách triển khai chức năng thông báo cho website. Phần này cần hoàn thành trước khi tích hợp MVP vào ngày 23 tháng 10.
+
+[00:00:45] Nam: Em nghĩ phương án A, gửi thông báo qua email, sẽ dễ làm hơn vì mình có thể tận dụng dịch vụ gửi mail có sẵn.
+
+[00:01:20] Lan: A dễ triển khai thật, nhưng người dùng có thể bỏ lỡ email. Nếu phải thông báo trạng thái công việc thường xuyên thì em thấy chưa tiện.
+
+[00:02:00] Nam: Nếu chuyển sang B, hiển thị thông báo ngay trên website, thì mình phải xử lý thêm phần giao diện và lưu trạng thái đã đọc.
+
+[00:02:40] Minh: Phần quan trọng nhất là người dùng vào hệ thống có thể nhìn thấy thông báo mới mà không phải kiểm tra hộp thư riêng. Mọi người xem B có đáp ứng được không?
+
+[00:03:15] Lan: Với B, mình có thể hiển thị số thông báo chưa đọc ở góc màn hình. Người dùng bấm vào là xem được nội dung và đường dẫn đến công việc liên quan.
+
+[00:04:00] Nam: Nếu chỉ cần thông báo trong website, em có thể làm danh sách thông báo và trạng thái đã đọc trước. Phần cập nhật theo thời gian thực mình chưa cần đưa vào bản đầu.
+
+[00:04:35] Minh: Cách chia đó nghe hợp lý. Bản đầu ưu tiên những chức năng cần thiết, phần nâng cao có thể để sau.
+
+[00:05:10] Lan: Em sẽ chuẩn bị các trường hợp kiểm thử cho thông báo mới, thông báo đã đọc và đường dẫn đến công việc. Nếu giao diện có danh sách và số chưa đọc thì em kiểm thử được.
+
+[00:05:50] Nam: Vậy phần em sẽ gồm bảng lưu thông báo, API lấy danh sách và API đánh dấu đã đọc. Em sẽ không làm gửi email ở đợt này.
+
+[00:06:25] Minh: Nhớ bảo đảm thông báo gắn đúng với người dùng, tránh trường hợp người này nhìn thấy thông báo của người khác.
+
+[00:07:00] Nam: Dạ, em sẽ lọc theo tài khoản đăng nhập và kiểm tra quyền truy cập ở API. Phần này em hoàn thành trước ngày 18 tháng 10.
+
+[00:07:35] Lan: Em nhận kiểm thử chức năng thông báo và phân quyền liên quan, dự kiến hoàn thành trước ngày 21 tháng 10.
+
+[00:08:10] Minh: Với phạm vi như vậy thì nhóm cứ triển khai theo kế hoạch vừa trao đổi. Đừng mở rộng thêm chức năng trong đợt này để kịp tích hợp.
+
+[00:08:45] Nam: Em sẽ bắt đầu làm danh sách thông báo trên website và API đánh dấu đã đọc. Nếu có thay đổi về phạm vi thì em sẽ báo lại.
+
+[00:09:15] Lan: Em sẽ chuẩn bị test theo luồng thông báo trên website, gồm cả kiểm tra dữ liệu giữa các tài khoản.
+
+[00:09:45] Minh: Được, hai bạn cập nhật tiến độ trong buổi họp tiếp theo. Mục tiêu vẫn là tích hợp xong MVP trước ngày 23 tháng 10.

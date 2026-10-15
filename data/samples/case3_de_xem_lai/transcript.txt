@@ -1,0 +1,33 @@
+[00:00:10] Minh: Hôm nay chúng ta cần thống nhất cách triển khai chức năng báo cáo thống kê cho website. Mục tiêu là hoàn thành MVP trước ngày 23 tháng 10 năm 2026.
+
+[00:00:50] Nam: Em đề xuất phương án A, sử dụng thư viện biểu đồ có sẵn. Thư viện đã hỗ trợ các dạng biểu đồ cơ bản nên thời gian phát triển sẽ ngắn hơn.
+
+[00:01:30] Lan: Em đã thử thư viện đó. Một số biểu đồ chạy tốt, nhưng khả năng tùy chỉnh giao diện và xử lý dữ liệu lớn chưa đáp ứng hoàn toàn yêu cầu.
+
+[00:02:10] Nam: Nếu chuyển sang B và tự xây dựng thành phần biểu đồ thì mình sẽ chủ động hơn, nhưng thời gian phát triển và kiểm thử có thể tăng.
+
+[00:02:50] Minh: Hiện tại tôi chưa muốn quyết định ngay. Chúng ta cần có thêm thông tin về hiệu năng và khối lượng công việc của cả hai phương án.
+
+[00:03:25] Lan: Em có thể chạy thử A với bộ dữ liệu lớn hơn để đo thời gian tải biểu đồ và mức sử dụng bộ nhớ.
+
+[00:04:00] Nam: Em sẽ kiểm tra xem thư viện A có hỗ trợ những kiểu biểu đồ mà sản phẩm cần không, đồng thời ước lượng công sức nếu phải tự xây dựng theo B.
+
+[00:04:40] Minh: Được, nhưng đây mới là việc thu thập thông tin. Chưa có phương án nào được chốt trong cuộc họp hôm nay.
+
+[00:05:15] Nam: Nếu kết quả thử nghiệm của A đáp ứng yêu cầu thì em vẫn nghiêng về A vì dễ bảo trì hơn.
+
+[00:05:50] Lan: Em chưa thể đồng ý hoàn toàn. Nếu hiệu năng không đạt thì B có thể phù hợp hơn, nhưng cần xem số liệu trước.
+
+[00:06:25] Minh: Vậy mọi người đừng triển khai chính thức theo A hoặc B lúc này. Chúng ta sẽ xem kết quả kiểm tra rồi mới quyết định.
+
+[00:07:00] Lan: Em nhận kiểm tra hiệu năng của thư viện A trên bộ dữ liệu lớn, gửi kết quả trước ngày 16 tháng 10 năm 2026.
+
+[00:07:35] Nam: Em sẽ tổng hợp các kiểu biểu đồ cần hỗ trợ và ước lượng thời gian phát triển phương án B, cũng gửi trước ngày 16 tháng 10.
+
+[00:08:10] Minh: Tôi sẽ xem hai phần đánh giá và tổ chức trao đổi lại vào ngày 16 tháng 10. Sau buổi đó chúng ta mới xác định phương án cuối cùng.
+
+[00:08:45] Nam: Em hiểu. Trước khi có kết luận mới, em chỉ khảo sát và ước lượng, chưa bắt đầu xây dựng chính thức.
+
+[00:09:15] Lan: Em cũng sẽ chỉ chạy thử và báo cáo kết quả. Việc kiểm thử chính thức sẽ thực hiện sau khi nhóm thống nhất phương án.
+
+[00:09:45] Minh: Thống nhất như vậy. Hiện tại cả A và B vẫn đang được xem xét, chưa có quyết định cuối cùng. Mục tiêu MVP ngày 23 tháng 10 vẫn được giữ nguyên.

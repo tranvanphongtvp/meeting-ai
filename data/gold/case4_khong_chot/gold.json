@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "meeting_id": "case4_khong_chot",
+  "muc_dich": "Thảo luận bất đồng không đi tới kết luận: không có quyết định, cả A và B còn proposed, không có ngày chốt. Hai bên chỉ nhận việc khảo sát.",
+  "ghi_chu_chung": "Khớp mục gold với dự đoán theo loại mục và mức trùng của turn_ids, KHÔNG theo item_id/event_id (hai thứ này đổi mỗi lần chạy). Trường *_chap_nhan là danh sách giá trị đều được coi là đúng. optional=true: có hay không đều không bị tính thiếu/thừa.",
+  "items": [
+    {
+      "gold_id": "G01",
+      "type": "goal",
+      "status": "confirmed",
+      "deadline": "2026-10-23",
+      "summary": "Hoàn thành MVP trước 23/10/2026",
+      "turn_ids": [
+        "T001",
+        "T018"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G02",
+      "type": "open_question",
+      "status": "open",
+      "summary": "Chọn A (cổng thanh toán bên thứ ba) hay B (tự xây) cho thanh toán, và khi nào chốt?",
+      "ghi_chu": "Minh nói rõ: chưa chốt, và chưa xác định cả ngày chốt (T015, T018).",
+      "turn_ids": [
+        "T006",
+        "T009",
+        "T012",
+        "T015",
+        "T018"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G03",
+      "type": "proposal",
+      "status": "proposed",
+      "proposed_by": "Nam",
+      "summary": "Đề xuất A: tích hợp cổng thanh toán bên thứ ba",
+      "ghi_chu": "Bị Lan phản đối (T003, T008) nhưng KHÔNG bị bác: Minh nói 'A chưa được thống nhất' và 'không có nghĩa là chuyển sang B' (T009). Dễ bị hệ thống gán nhầm rejected vì có sự kiện object.",
+      "turn_ids": [
+        "T002",
+        "T007"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G04",
+      "type": "proposal",
+      "status": "proposed",
+      "optional": true,
+      "proposed_by": "Lan",
+      "summary": "Lan nghiêng về B: tự xây dựng hệ thống thanh toán",
+      "ghi_chu": "Chỉ là thiên hướng; Lan còn nói chưa thể cam kết B (T011). Để optional.",
+      "turn_ids": [
+        "T005"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G05",
+      "type": "action",
+      "status": "confirmed",
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed"
+      ],
+      "owner": "Nam",
+      "deadline": null,
+      "summary": "Nam tìm hiểu tài liệu API và phí của một số cổng thanh toán (chỉ khảo sát)",
+      "ghi_chu": "Nam nói 'em có thể...' nên có hedge; Minh đáp 'hai bạn cứ ghi lại thông tin hiện có' (T015). Không có hạn.",
+      "turn_ids": [
+        "T013",
+        "T016"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G06",
+      "type": "action",
+      "status": "confirmed",
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed"
+      ],
+      "owner": "Lan",
+      "deadline": null,
+      "summary": "Lan tổng hợp các thành phần cần xây dựng nếu chọn B và rủi ro (sơ bộ)",
+      "ghi_chu": "Tương tự G05. Không có hạn.",
+      "turn_ids": [
+        "T014",
+        "T017"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G07",
+      "type": "issue",
+      "status": "open",
+      "optional": true,
+      "status_chap_nhan": [
+        "open"
+      ],
+      "summary": "Nam chưa biết nên thiết kế phần thanh toán theo hướng nào khi chưa có quyết định, để tránh sửa nhiều lần",
+      "turn_ids": [
+        "T010"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G08",
+      "type": "issue",
+      "status": "open",
+      "optional": true,
+      "status_chap_nhan": [
+        "open"
+      ],
+      "summary": "Lo ngại phương án A: phí giao dịch tăng theo đơn hàng và phụ thuộc nhà cung cấp",
+      "turn_ids": [
+        "T003",
+        "T008"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ],
+  "must_not_have": [
+    {
+      "type": "decision",
+      "status": [
+        "confirmed",
+        "rejected",
+        "superseded"
+      ],
+      "turn_ids": [],
+      "ly_do": "Không có quyết định nào: Minh nói rõ chưa chốt (T006, T012, T018). Không được có decision đã chốt/bị bác/bị thay thế."
+    },
+    {
+      "type": "proposal",
+      "status": [
+        "rejected",
+        "superseded"
+      ],
+      "turn_ids": [],
+      "ly_do": "A và B đều vẫn đang cân nhắc (T018): không đề xuất nào được rejected hoặc superseded."
+    },
+    {
+      "type": "action",
+      "status": [
+        "confirmed"
+      ],
+      "summary_chua_mot_trong": [
+        "tích hợp cổng thanh toán",
+        "xây dựng hệ thống thanh toán",
+        "triển khai thanh toán"
+      ],
+      "turn_ids": [
+        "T016",
+        "T017"
+      ],
+      "ly_do": "Nam và Lan đều nói rõ chưa bắt đầu tích hợp/xây dựng chính thức (T016, T017). Không được có việc triển khai thanh toán đã nhận."
+    }
+  ],
+  "must_share_thread": [
+    [
+      "G02",
+      "G03"
+    ]
+  ],
+  "must_not_share_thread": [],
+  "pair_labels": [
+    {
+      "items": [
+        "G05",
+        "G06"
+      ],
+      "same_task": false,
+      "ghi_chu": "Hai việc khảo sát: phí và API cổng thanh toán (A) với thành phần cần xây (B)."
+    }
+  ]
+}

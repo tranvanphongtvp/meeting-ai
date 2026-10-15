@@ -1,0 +1,30 @@
+{
+  "meeting_id": "case2_chot_ngam",
+  "meeting_date": "2026-10-14",
+  "title": "Họp thống nhất cách triển khai chức năng thông báo",
+  "participants": [
+    {
+      "name": "Nam",
+      "aliases": ["anh Nam"],
+      "role": "Developer",
+      "can_decide": false
+    },
+    {
+      "name": "Lan",
+      "aliases": [],
+      "role": "Developer",
+      "can_decide": false
+    },
+    {
+      "name": "Minh",
+      "aliases": ["anh Minh"],
+      "role": "Trưởng nhóm",
+      "can_decide": true
+    }
+  ],
+  "glossary": {
+    "A": "Gửi thông báo qua email",
+    "B": "Hiển thị thông báo trực tiếp trên website",
+    "MVP": "Minimum Viable Product - sản phẩm khả dụng tối thiểu"
+  }
+}

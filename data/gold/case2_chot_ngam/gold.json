@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "meeting_id": "case2_chot_ngam",
+  "muc_dich": "Chốt ngầm: không ai nói 'chốt B', nhưng Minh duyệt phạm vi ('Cách chia đó nghe hợp lý', 'cứ triển khai theo kế hoạch vừa trao đổi'). Hệ thống phải ra B đã chốt kèm cờ implicit_signal.",
+  "ghi_chu_chung": "Khớp mục gold với dự đoán theo loại mục và mức trùng của turn_ids, KHÔNG theo item_id/event_id (hai thứ này đổi mỗi lần chạy). Trường *_chap_nhan là danh sách giá trị đều được coi là đúng. optional=true: có hay không đều không bị tính thiếu/thừa.",
+  "items": [
+    {
+      "gold_id": "G01",
+      "type": "goal",
+      "status": "confirmed",
+      "deadline": "2026-10-23",
+      "summary": "Tích hợp xong MVP trước 23/10, chức năng thông báo phải xong trước đó",
+      "turn_ids": [
+        "T001",
+        "T017"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G02",
+      "type": "decision",
+      "status": "confirmed",
+      "decided_by": "Minh",
+      "rejected_options": [
+        "phương án A (gửi email)"
+      ],
+      "needs_review": true,
+      "review_reasons": [
+        "implicit_signal"
+      ],
+      "summary": "Dùng phương án B: hiển thị thông báo trên website (danh sách + trạng thái đã đọc), bản đầu chưa có realtime, không gửi email",
+      "ghi_chu": "Chốt ngầm qua T008 và T014 (Minh duyệt phạm vi, không nói 'chốt'). Người gán nhãn cho là đã chốt nhưng NÊN gắn cờ xem lại. Phạm vi 'chưa cần realtime, không mở rộng thêm' nằm trong quyết định này.",
+      "turn_ids": [
+        "T005",
+        "T008",
+        "T014"
+      ]
+    },
+    {
+      "gold_id": "G03",
+      "type": "proposal",
+      "status": "proposed",
+      "optional": true,
+      "status_chap_nhan": [
+        "superseded",
+        "rejected"
+      ],
+      "proposed_by": "Nam",
+      "summary": "Đề xuất A: gửi thông báo qua email",
+      "ghi_chu": "Lan phản đối vì người dùng có thể bỏ lỡ email (T003); Nam tự gác lại ở T010 ('không làm gửi email ở đợt này'). Xem ghi chú về luật S1 ở case1.",
+      "turn_ids": [
+        "T002",
+        "T003"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G04",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Nam",
+      "deadline": "2026-10-18",
+      "summary": "Nam làm bảng lưu thông báo, API lấy danh sách, API đánh dấu đã đọc, lọc theo tài khoản và kiểm tra quyền",
+      "ghi_chu": "Hạn 18/10 chỉ xuất hiện ở T012 nhưng thuộc cùng việc.",
+      "turn_ids": [
+        "T010",
+        "T012",
+        "T015"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G05",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Lan",
+      "deadline": "2026-10-21",
+      "summary": "Lan kiểm thử thông báo mới, đã đọc, đường dẫn, phân quyền và dữ liệu giữa các tài khoản",
+      "ghi_chu": "Hạn 'dự kiến trước 21/10' (T013) có hedge nhưng vẫn coi là hạn.",
+      "turn_ids": [
+        "T009",
+        "T013",
+        "T016"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G06",
+      "type": "requirement_feedback",
+      "status": "confirmed",
+      "summary": "Thông báo phải gắn đúng người dùng, không để người này thấy thông báo của người khác",
+      "ghi_chu": "Minh nêu yêu cầu ở T011, Nam nhận xử lý ở T012.",
+      "turn_ids": [
+        "T011",
+        "T012"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G07",
+      "type": "requirement_feedback",
+      "status": "confirmed",
+      "optional": true,
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed",
+        "open"
+      ],
+      "summary": "Người dùng vào hệ thống phải thấy thông báo mới mà không phải kiểm tra hộp thư riêng",
+      "turn_ids": [
+        "T005"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ],
+  "must_not_have": [
+    {
+      "type": "decision",
+      "status": [
+        "confirmed"
+      ],
+      "turn_ids": [
+        "T002",
+        "T003"
+      ],
+      "ly_do": "Phương án A (email) bị Lan phản đối và Nam gác lại; không được có quyết định chọn A."
+    }
+  ],
+  "must_share_thread": [],
+  "must_not_share_thread": [],
+  "pair_labels": [
+    {
+      "items": [
+        "G04",
+        "G05"
+      ],
+      "same_task": false,
+      "ghi_chu": "Cùng nói 'thông báo' nhưng một bên làm, một bên kiểm thử: phép thử báo nhầm của ngưỡng."
+    }
+  ]
+}

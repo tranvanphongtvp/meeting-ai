@@ -1,0 +1,30 @@
+{
+  "meeting_id": "case5_giao_viec_ngam",
+  "meeting_date": "2026-10-14",
+  "title": "Họp thống nhất chuẩn bị dữ liệu cho chức năng tìm kiếm",
+  "participants": [
+    {
+      "name": "Nam",
+      "aliases": ["anh Nam"],
+      "role": "Developer",
+      "can_decide": false
+    },
+    {
+      "name": "Lan",
+      "aliases": [],
+      "role": "Tester",
+      "can_decide": false
+    },
+    {
+      "name": "Minh",
+      "aliases": ["anh Minh"],
+      "role": "Trưởng nhóm",
+      "can_decide": true
+    }
+  ],
+  "glossary": {
+    "A": "Tìm kiếm theo từ khóa chính xác",
+    "B": "Tìm kiếm có hỗ trợ từ khóa gần đúng",
+    "MVP": "Minimum Viable Product - sản phẩm khả dụng tối thiểu"
+  }
+}

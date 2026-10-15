@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "meeting_id": "case1_dao_nguoc",
+  "muc_dich": "Đảo ngược quyết định: A được đề xuất và Minh nghiêng về A, sau đó đổi sang B; Nam đòi quay lại A nhưng Minh giữ B. Kết quả cuối phải là B.",
+  "ghi_chu_chung": "Khớp mục gold với dự đoán theo loại mục và mức trùng của turn_ids, KHÔNG theo item_id/event_id (hai thứ này đổi mỗi lần chạy). Trường *_chap_nhan là danh sách giá trị đều được coi là đúng. optional=true: có hay không đều không bị tính thiếu/thừa.",
+  "items": [
+    {
+      "gold_id": "G01",
+      "type": "goal",
+      "status": "confirmed",
+      "deadline": "2026-10-23",
+      "summary": "Hoàn thành MVP trước 23/10/2026",
+      "turn_ids": [
+        "T001",
+        "T015"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G02",
+      "type": "decision",
+      "status": "confirmed",
+      "decided_by": "Minh",
+      "rejected_options": [
+        "phương án A"
+      ],
+      "summary": "Chốt phương án B: xây module tùy chỉnh, không triển khai A",
+      "ghi_chu": "Quyết định cuối. Minh chốt ở T010 và khẳng định lại ở T013 sau khi Nam đòi quay lại A. Minh có can_decide nên không cần cờ xem lại.",
+      "turn_ids": [
+        "T010",
+        "T013"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G03",
+      "type": "proposal",
+      "status": "proposed",
+      "optional": true,
+      "status_chap_nhan": [
+        "superseded",
+        "rejected"
+      ],
+      "proposed_by": "Nam",
+      "summary": "Đề xuất A: dùng framework có sẵn",
+      "ghi_chu": "Về nghĩa A bị B thay. Lưu ý: luật S1 trong state_rules.py đòi mục bị thay phải đang confirmed, mà proposal không bao giờ confirmed, nên hệ thống có thể hạ về proposed kèm rule_conflict. Gold chấp nhận cả 3 kết quả, và bản thân A đã được ghi trong rejected_options của G02.",
+      "turn_ids": [
+        "T002",
+        "T003"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G04",
+      "type": "proposal",
+      "status": "rejected",
+      "optional": true,
+      "status_chap_nhan": [
+        "rejected",
+        "superseded"
+      ],
+      "proposed_by": "Nam",
+      "summary": "Đề xuất lai: dùng A cho phần khung chính rồi bổ sung module B sau",
+      "ghi_chu": "Nam nêu ở T011, Lan phản đối T012, Minh bác ở T013 ('không thay đổi quyết định').",
+      "turn_ids": [
+        "T011",
+        "T012",
+        "T013"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G05",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Nam",
+      "deadline": "2026-10-16",
+      "summary": "Nam xây dựng module quản lý quyền người dùng theo B",
+      "turn_ids": [
+        "T008",
+        "T013",
+        "T014"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G06",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Lan",
+      "deadline": "2026-10-20",
+      "summary": "Lan kiểm thử đăng nhập, phân quyền, kiểm soát truy cập",
+      "turn_ids": [
+        "T009",
+        "T013",
+        "T015"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G07",
+      "type": "requirement_feedback",
+      "status": "proposed",
+      "optional": true,
+      "status_chap_nhan": [
+        "proposed",
+        "confirmed",
+        "open"
+      ],
+      "summary": "Framework của A khó tùy chỉnh một số quy tắc truy cập mà dự án cần",
+      "ghi_chu": "Phản hồi của Lan, là lý do chính để chuyển sang B. Có thể được ghi dưới dạng issue; chấp nhận.",
+      "turn_ids": [
+        "T004"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ],
+  "must_not_have": [
+    {
+      "type": "decision",
+      "status": [
+        "confirmed"
+      ],
+      "turn_ids": [
+        "T002",
+        "T003"
+      ],
+      "ly_do": "Minh chỉ nói A 'có vẻ hợp lý... nếu không có vấn đề lớn' (T003), đây là nghiêng về chứ chưa chốt. Không được có quyết định A đã chốt."
+    },
+    {
+      "type": "decision",
+      "status": [
+        "confirmed"
+      ],
+      "turn_ids": [
+        "T011",
+        "T012"
+      ],
+      "ly_do": "Ý kiến lai A+B của Nam (T011) đã bị Minh bác (T013). Không được thành quyết định."
+    }
+  ],
+  "must_share_thread": [
+    [
+      "G02",
+      "G03"
+    ]
+  ],
+  "must_not_share_thread": [],
+  "pair_labels": [
+    {
+      "items": [
+        "G05",
+        "G06"
+      ],
+      "same_task": false,
+      "ghi_chu": "Phát triển module và kiểm thử, cùng chủ đề quyền người dùng nhưng khác việc, khác người."
+    }
+  ]
+}

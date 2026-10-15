@@ -1,0 +1,35 @@
+[00:00:10] Minh: Hôm nay chúng ta cần bàn về phương án triển khai chức năng thanh toán cho website. Mục tiêu chung vẫn là hoàn thành MVP trước ngày 23 tháng 10 năm 2026.
+
+[00:00:45] Nam: Em đề xuất phương án A, tích hợp cổng thanh toán bên thứ ba. Mình có thể tận dụng API có sẵn, giảm khối lượng phát triển và triển khai nhanh hơn.
+
+[00:01:20] Lan: Em không hoàn toàn đồng ý với A. Phí giao dịch có thể tăng theo số lượng đơn hàng, ngoài ra mình còn phụ thuộc vào chính sách và độ ổn định của nhà cung cấp.
+
+[00:02:00] Nam: Nhưng nếu tự xây dựng theo phương án B thì phần xử lý giao dịch, bảo mật và đối soát sẽ phức tạp hơn nhiều. Em nghĩ làm trong thời gian hiện tại sẽ khá rủi ro.
+
+[00:02:40] Lan: Em vẫn nghiêng về B vì nhóm có thể chủ động hơn trong việc tùy chỉnh quy trình thanh toán. Nếu phụ thuộc hoàn toàn vào bên thứ ba thì sau này thay đổi yêu cầu sẽ khó.
+
+[00:03:15] Minh: Tôi hiểu ưu điểm của cả hai phương án, nhưng hiện tại tôi chưa thấy phương án nào thuyết phục hoàn toàn.
+
+[00:03:50] Nam: Nếu xét riêng tiến độ MVP thì A có vẻ an toàn hơn. Mình có thể tích hợp trước các chức năng cơ bản rồi cải tiến sau.
+
+[00:04:25] Lan: Em lo rằng nếu chọn A ngay thì sau này phí và giới hạn API sẽ trở thành vấn đề. Em chưa muốn đồng ý với phương án này khi chưa rõ các điều kiện sử dụng.
+
+[00:05:00] Minh: Vậy hiện tại chúng ta chưa thể xem A là phương án đã được thống nhất. Tuy nhiên, điều đó cũng không có nghĩa là nhóm sẽ chuyển sang B.
+
+[00:05:35] Nam: Nếu không dùng A mà cũng chưa chọn B thì em chưa biết nên thiết kế phần thanh toán theo hướng nào để không phải sửa lại nhiều lần.
+
+[00:06:10] Lan: Em cũng chưa thể cam kết phương án B sẽ đáp ứng được tiến độ. Nếu tự xây dựng thì cần làm rõ phạm vi chức năng và các yêu cầu bảo mật trước.
+
+[00:06:45] Minh: Tôi chưa chốt phương án nào trong cuộc họp này. Tôi muốn nghe thêm đánh giá về chi phí, thời gian phát triển và các rủi ro của từng lựa chọn.
+
+[00:07:20] Nam: Em có thể tìm hiểu tài liệu API và các khoản phí của một số cổng thanh toán. Nhưng nếu chưa có quyết định thì em sẽ chỉ khảo sát, chưa bắt đầu tích hợp chính thức.
+
+[00:07:55] Lan: Em có thể tổng hợp những thành phần cần xây dựng nếu chọn B. Tuy nhiên, phần ước lượng hiện tại chỉ mang tính sơ bộ, chưa đủ để khẳng định B khả thi.
+
+[00:08:30] Minh: Được, hai bạn cứ ghi lại các thông tin hiện có. Nhưng chúng ta chưa thống nhất thời điểm chọn phương án cuối cùng, vì còn phụ thuộc vào kết quả đánh giá.
+
+[00:09:05] Nam: Vậy em sẽ chưa tạo phần tích hợp thanh toán chính thức trong code. Khi có kết luận rõ ràng, em mới triển khai theo phương án được chọn.
+
+[00:09:35] Lan: Em cũng chưa bắt đầu xây dựng hệ thống thanh toán riêng. Hiện tại em chỉ có thể tổng hợp yêu cầu và các rủi ro của phương án B.
+
+[00:10:00] Minh: Thống nhất là cuộc họp hôm nay chưa đưa ra quyết định cuối cùng. Cả A và B vẫn đang được cân nhắc, và chúng ta chưa xác định ngày chốt phương án. Mục tiêu MVP ngày 23 tháng 10 vẫn là mục tiêu hiện tại.

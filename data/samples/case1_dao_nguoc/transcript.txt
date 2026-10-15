@@ -1,0 +1,29 @@
+[00:00:10] Minh: Hôm nay chúng ta cần chốt phương án triển khai website quản lý công việc. Mục tiêu là hoàn thành MVP trước ngày 23 tháng 10 năm 2026.
+
+[00:00:55] Nam: Em đề xuất phương án A, dùng framework có sẵn. Cách này giúp nhóm dựng các chức năng cơ bản nhanh hơn và giảm khối lượng code ban đầu.
+
+[00:01:40] Minh: A có vẻ hợp lý vì tiến độ khá gấp. Nếu không có vấn đề lớn thì chúng ta có thể đi theo hướng này.
+
+[00:02:25] Lan: Em đã thử đối chiếu yêu cầu phân quyền. Framework của phương án A khó tùy chỉnh một số quy tắc truy cập mà bên mình cần.
+
+[00:03:05] Nam: Nếu phải sửa sâu framework thì lợi thế làm nhanh có thể không còn. Nhưng chuyển sang B thì em lo phần module sẽ tốn thêm thời gian.
+
+[00:03:50] Lan: Em đề xuất phương án B, tự xây dựng module quản lý quyền người dùng. Ban đầu vất vả hơn nhưng sẽ kiểm soát được đăng nhập, phân quyền và truy cập.
+
+[00:04:30] Minh: Vậy mình cân nhắc lại. Nếu chọn B thì cần chia rõ phần phát triển và kiểm thử để không ảnh hưởng mốc MVP.
+
+[00:05:10] Nam: Em có thể nhận phần module theo B và hoàn thành trước ngày 16 tháng 10. Em sẽ ưu tiên các chức năng phân quyền cốt lõi.
+
+[00:05:45] Lan: Em có thể kiểm thử đăng nhập, phân quyền và kiểm soát truy cập, hoàn thành trước ngày 20 tháng 10.
+
+[00:06:20] Minh: Được, tôi quyết định chuyển sang phương án B và không tiếp tục triển khai A. B là quyết định chính thức của nhóm.
+
+[00:06:55] Nam: Để chắc tiến độ, hay mình vẫn dùng A cho phần khung chính rồi bổ sung module B sau? Như vậy có thể tiết kiệm thời gian.
+
+[00:07:25] Lan: Em nghĩ không nên quay lại A vì vấn đề tùy chỉnh vẫn còn. Nếu đã chốt B thì nên triển khai nhất quán theo B.
+
+[00:08:00] Minh: Ý kiến dùng A vừa rồi chỉ là phương án được nhắc lại để cân nhắc, không thay đổi quyết định. Chốt cuối cùng vẫn là B: Nam làm module trước ngày 16 tháng 10, Lan kiểm thử trước ngày 20 tháng 10.
+
+[00:08:35] Nam: Em xác nhận phụ trách module quản lý quyền người dùng theo B và sẽ bàn giao trước ngày 16 tháng 10 năm 2026.
+
+[00:09:05] Lan: Em xác nhận kiểm thử đăng nhập, phân quyền và kiểm soát truy cập trước ngày 20 tháng 10. Nhóm vẫn giữ mục tiêu hoàn thành MVP trước ngày 23 tháng 10.

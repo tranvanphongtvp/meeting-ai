@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "meeting_id": "case5_giao_viec_ngam",
+  "muc_dich": "Giao việc ngầm: Minh không nói 'X làm việc Y'. Việc được giao qua mô tả mong muốn và người nhận tự nhận. Kiểm: owner đúng người, hạn 17/10 là của Nam, hạn 20/10 là của Lan.",
+  "ghi_chu_chung": "Khớp mục gold với dự đoán theo loại mục và mức trùng của turn_ids, KHÔNG theo item_id/event_id (hai thứ này đổi mỗi lần chạy). Trường *_chap_nhan là danh sách giá trị đều được coi là đúng. optional=true: có hay không đều không bị tính thiếu/thừa.",
+  "items": [
+    {
+      "gold_id": "G01",
+      "type": "goal",
+      "status": "confirmed",
+      "deadline": "2026-10-23",
+      "summary": "Hoàn thành MVP trước 23/10, phần chuẩn bị dữ liệu và kiểm thử không được ảnh hưởng tiến độ",
+      "turn_ids": [
+        "T001",
+        "T015"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G02",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Nam",
+      "deadline": "2026-10-17",
+      "assignment_clarity": "implicit",
+      "summary": "Nam chuẩn hóa bộ khoảng 100 sản phẩm mẫu (tên, mã, danh mục), kiểm tra trùng/thiếu, mã duy nhất, rồi gửi cho Lan",
+      "ghi_chu": "Giao ngầm: Minh chỉ nói 'dữ liệu nên được chuẩn bị trước' (T005), Nam tự nhận (T006). Hạn 17/10 do Minh nói ở T010 không nêu tên nhưng rõ ràng là phần dữ liệu của Nam.",
+      "turn_ids": [
+        "T005",
+        "T006",
+        "T009",
+        "T010",
+        "T013",
+        "T016"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G03",
+      "type": "action",
+      "status": "confirmed",
+      "owner": "Lan",
+      "deadline": "2026-10-20",
+      "needs_review_chap_nhan": [
+        false,
+        true
+      ],
+      "assignment_clarity": "implicit",
+      "summary": "Lan lập danh sách từ khóa, kết quả mong đợi và các trường hợp kiểm thử từ bộ dữ liệu của Nam",
+      "ghi_chu": "Giao ngầm qua T007; Lan nhận ở T008, T011 với hạn 'cố gắng' 20/10. Gắn cờ hay không đều chấp nhận (người gán nhãn không chắc 'cố gắng' có đủ hedge để cờ hay không).",
+      "turn_ids": [
+        "T007",
+        "T008",
+        "T011",
+        "T014",
+        "T017"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G04",
+      "type": "decision",
+      "status": "confirmed",
+      "optional": true,
+      "decided_by": "Minh",
+      "summary": "Thống nhất cấu trúc dữ liệu mẫu (tên, mã, danh mục) và chuẩn bị dữ liệu song song với bộ kiểm thử",
+      "ghi_chu": "Không phải quyết định A/B kiểu cổ điển; optional.",
+      "turn_ids": [
+        "T009",
+        "T010",
+        "T015",
+        "T018"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G05",
+      "type": "issue",
+      "status": "open",
+      "status_chap_nhan": [
+        "open",
+        "superseded"
+      ],
+      "summary": "Dữ liệu mẫu hiện chỉ khoảng 20 sản phẩm, chưa đủ để kiểm thử các trường hợp tìm kiếm",
+      "ghi_chu": "Vướng mắc đã có hướng xử lý (G02). Chấp nhận open hoặc superseded.",
+      "turn_ids": [
+        "T002"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G06",
+      "type": "requirement_feedback",
+      "status": "confirmed",
+      "optional": true,
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed"
+      ],
+      "summary": "Bộ dữ liệu phải có cả trường hợp bình thường và trường hợp dễ gây nhầm lẫn",
+      "turn_ids": [
+        "T003"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "gold_id": "G07",
+      "type": "requirement_feedback",
+      "status": "confirmed",
+      "optional": true,
+      "status_chap_nhan": [
+        "confirmed",
+        "proposed"
+      ],
+      "summary": "Mỗi trường hợp kiểm thử phải truy ngược được về dữ liệu mẫu tương ứng",
+      "turn_ids": [
+        "T012",
+        "T013",
+        "T014"
+      ],
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ],
+  "must_not_have": [
+    {
+      "type": "action",
+      "owner": "Minh",
+      "turn_ids": [],
+      "ly_do": "Minh không nhận việc nào trong cuộc họp này; chỉ điều phối."
+    },
+    {
+      "type": "action",
+      "owner": "Lan",
+      "deadline": "2026-10-17",
+      "turn_ids": [],
+      "ly_do": "Hạn 17/10 là của việc chuẩn bị dữ liệu (Nam), không phải việc của Lan."
+    },
+    {
+      "type": "action",
+      "owner": "Nam",
+      "deadline": "2026-10-20",
+      "turn_ids": [],
+      "ly_do": "Hạn 20/10 là của phần kiểm thử chuẩn bị (Lan), không phải việc của Nam."
+    },
+    {
+      "type": "decision",
+      "status": [
+        "confirmed"
+      ],
+      "summary_chua_mot_trong": [
+        "phương án A",
+        "phương án B",
+        "từ khóa gần đúng",
+        "tìm kiếm chính xác"
+      ],
+      "turn_ids": [],
+      "ly_do": "Glossary có A/B (tìm kiếm chính xác / gần đúng) nhưng cuộc họp KHÔNG bàn hay chọn giữa hai kiểu này."
+    }
+  ],
+  "must_share_thread": [],
+  "must_not_share_thread": [],
+  "pair_labels": [
+    {
+      "items": [
+        "G02",
+        "G03"
+      ],
+      "same_task": false,
+      "ghi_chu": "Chuẩn bị dữ liệu (Nam) và chuẩn bị bộ từ khóa/kết quả mong đợi (Lan): cùng chủ đề dữ liệu kiểm thử, nhưng khác việc, khác người."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[00:00:10] Minh: Hôm nay chúng ta rà soát phần tìm kiếm sản phẩm. MVP vẫn cần hoàn thành trước ngày 23 tháng 10. Trước khi tích hợp, nhóm cần có dữ liệu mẫu đủ để kiểm tra các trường hợp tìm kiếm.
+
+[00:00:45] Nam: Hiện tại em mới có khoảng hai mươi sản phẩm mẫu. Số lượng đó có lẽ chưa đủ để kiểm tra trường hợp tên sản phẩm dài, từ khóa thiếu ký tự hoặc nhiều sản phẩm có tên gần giống nhau.
+
+[00:01:20] Minh: Nếu dữ liệu mẫu chưa đủ thì kết quả kiểm thử sẽ khó phản ánh tình huống thực tế. Bộ dữ liệu nên có cả trường hợp bình thường và trường hợp dễ gây nhầm lẫn.
+
+[00:01:55] Lan: Đúng rồi anh. Em cũng cần một danh sách từ khóa tìm kiếm tương ứng để so sánh kết quả mong đợi với kết quả thực tế. Nếu chỉ có dữ liệu sản phẩm mà không có từ khóa kiểm thử thì em khó đánh giá chính xác.
+
+[00:02:30] Minh: Vậy phần dữ liệu sản phẩm nên được chuẩn bị trước. Nếu có khoảng một trăm sản phẩm với tên, mã và danh mục rõ ràng thì sẽ thuận tiện hơn cho cả phát triển lẫn kiểm thử.
+
+[00:03:05] Nam: Một trăm sản phẩm thì em có thể chuẩn hóa tên, mã sản phẩm và danh mục. Em cũng sẽ kiểm tra các bản ghi trùng nhau để tránh ảnh hưởng đến kết quả tìm kiếm.
+
+[00:03:40] Minh: Như vậy phần dữ liệu có hướng xử lý rồi. Còn danh sách từ khóa và kết quả mong đợi cần được chuẩn bị đồng bộ để khi chạy thử mọi người có cùng căn cứ đánh giá.
+
+[00:04:15] Lan: Em có thể dựa trên bộ dữ liệu đó để lập các trường hợp kiểm thử, gồm từ khóa chính xác, từ khóa thiếu ký tự và từ khóa có nhiều kết quả gần giống nhau.
+
+[00:04:50] Nam: Nếu thống nhất cấu trúc dữ liệu gồm tên, mã và danh mục thì em sẽ chuẩn hóa theo đúng cấu trúc đó. Sau khi xong em sẽ gửi bộ dữ liệu cho Lan dùng để chuẩn bị kiểm thử.
+
+[00:05:25] Minh: Được, cách làm đó phù hợp. Phần chuẩn bị dữ liệu cần xong trước ngày 17 tháng 10 để nhóm còn thời gian kiểm tra và tích hợp.
+
+[00:06:00] Lan: Vậy khi nhận được dữ liệu, em sẽ lập danh sách từ khóa và ghi lại kết quả mong đợi cho từng trường hợp. Em sẽ cố gắng hoàn thành phần kiểm thử chuẩn bị trước ngày 20 tháng 10.
+
+[00:06:35] Minh: Chúng ta cần bảo đảm mỗi trường hợp kiểm thử có thể truy ngược về dữ liệu mẫu tương ứng. Nếu phát hiện kết quả không đúng thì nhóm sẽ dễ xác định nguyên nhân hơn.
+
+[00:07:10] Nam: Em sẽ giữ mã sản phẩm duy nhất cho từng bản ghi và kiểm tra lại các trường bị thiếu trước khi gửi dữ liệu.
+
+[00:07:45] Lan: Em cũng sẽ ghi rõ trường hợp nào tìm thấy kết quả, trường hợp nào không có kết quả và trường hợp nào có nhiều kết quả gần giống nhau.
+
+[00:08:20] Minh: Tốt. Như vậy chúng ta có thể chuẩn bị dữ liệu và bộ kiểm thử song song. Mục tiêu là hoàn tất phần chuẩn bị đúng hạn để không ảnh hưởng tiến độ MVP.
+
+[00:08:55] Nam: Em sẽ bắt đầu chuẩn hóa bộ dữ liệu theo cấu trúc đã trao đổi. Khi hoàn thành em sẽ gửi cho Lan.
+
+[00:09:25] Lan: Còn em sẽ chuẩn bị bộ từ khóa và kết quả mong đợi dựa trên cấu trúc dữ liệu đã thống nhất.
+
+[00:09:55] Minh: Thống nhất theo hướng đó. Nhóm tiếp tục cập nhật tiến độ trong buổi họp tiếp theo.
