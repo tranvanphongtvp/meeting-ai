@@ -36,7 +36,7 @@ if str(THU_MUC_SRC) not in sys.path:
 from pipeline import chay_pipeline  # noqa: E402
 
 
-PORT = 8080
+PORT = int(os.environ.get("PORT", 8080))
 THU_MUC_RUNS = THU_MUC_GOC / "data" / "runs"
 THU_MUC_SAMPLES = THU_MUC_GOC / "data" / "samples"
 
@@ -599,7 +599,7 @@ class WebHandler(BaseHTTPRequestHandler):
 
 
 def chay_server() -> None:
-    server_address = ("127.0.0.1", PORT)
+    server_address = ("0.0.0.0", PORT)
     httpd = ThreadingHTTPServer(server_address, WebHandler)
     print("=" * 60)
     print(f"🚀 Meeting AI Web Server đang chạy tại: http://localhost:{PORT}")
