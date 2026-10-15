@@ -72,19 +72,7 @@ Thay vì coi đầu ra của LLM là chân lý, hệ thống đặt LLM vào vai
 
 Trong quá trình triển khai thực tế từ Mission 1 đến nay, chúng tôi đã đưa ra **3 thay đổi thiết kế mang tính bước ngoặt**:
 
-#### 1. Thay đổi từ "Prompt nguyên khối (Monolithic Prompt)" sang "Pipeline phân tách 2 giai đoạn (Two-stage LLM Pipeline)":
-
-* **Thiết kế ban đầu (Mission 1):** Định dùng 1 prompt cực lớn đưa toàn bộ transcript và yêu cầu LLM vừa nhận diện người nói, vừa trích xuất hành động, vừa lập luồng, vừa chốt quyết định cuối cùng.
-
-* **Lý do thay đổi:** Khi thử nghiệm với các ca phức tạp (như **Case 1: Đảo ngược quyết định** hoặc **Case 4: Thảo luận nhiều nhưng không chốt**), mô hình đơn lẻ gặp hiện tượng **Recency Bias** (chỉ nhớ câu nói cuối cùng) hoặc **Over-eagerness** (hễ thấy ai nhắc đến một ý tưởng là tự động gán thành Quyết định đã chốt).
-
-* **Quyết định mới:** Tách làm 2 bước LLM chuyên biệt:
-
-  * **Bước 2 (LLM #1):** Chỉ tập trung bóc tách các hành vi lời nói nguyên tử (`SpeechEvent`: PROPOSE, DECIDE, ASSIGN, AGREE, DISAGREE...) kèm trích dẫn nguyên văn `quote`.
-
-  * **Bước 3 (LLM #2 + Code):** Gom nhóm sự kiện vào các luồng thảo luận (`Thread`) và chuyển giao quyền xử lý trạng thái cho máy trạng thái hữu hạn.
-
-#### 2. Từ bỏ hoàn toàn ý tưởng "Dùng LLM để chấm lại LLM (LLM-as-a-judge)" ở tầng kiểm chứng:
+#### 1. Từ bỏ hoàn toàn ý tưởng "Dùng LLM để chấm lại LLM (LLM-as-a-judge)" ở tầng kiểm chứng:
 
 * **Thiết kế ban đầu:** Định dùng một prompt kiểm toán giao cho model thứ 3 đọc lại toàn bộ để tìm lỗi sai.
 
@@ -92,15 +80,6 @@ Trong quá trình triển khai thực tế từ Mission 1 đến nay, chúng tô
 
 * **Quyết định mới:** Xây dựng Bước 6 hoàn toàn bằng code Python thuần túy (thuật toán so khớp chuỗi mờ, phân tích cú pháp ngày tháng, ma trận quan hệ logic). Chạy nhanh trong vài mili-giây, tốn 0 đồng tiền token và đảm bảo độ tin cậy tuyệt đối.
 
-#### 3. Bổ sung Báo cáo HTML tự chứa (Self-contained HTML) và Giao diện Web tương tác:
-
-* **Thiết kế ban đầu:** Chỉ dự kiến xuất file JSON thô trong thư mục `runs/`.
-
-* **Lý do thay đổi:** JSON chỉ phù hợp cho lập trình viên, người dùng nghiệp vụ và ban giám đốc không thể đọc hiểu và kiểm chứng đối chiếu bằng chứng trên các khối JSON ngoặc nhọn phức tạp.
-
-* **Quyết định mới:** Xây dựng Bước 8 xuất file HTML duy nhất nhúng sẵn CSS, responsive, có gắn nhãn màu phân biệt trạng thái, hiển thị bằng chứng đối chiếu song song và dựng Web Demo phục vụ người dùng thử nghiệm trực quan.
-
----
 
 ### CÂU HỎI 3:
 
